@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 /**
  * Created by Alex on 30.06.2017.
  */
-public class HIbernateUtil {
+public class HibernateUtil {
 
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
@@ -25,4 +25,7 @@ public class HIbernateUtil {
     }
 
 
+    public static void shutdown() {
+        sessionFactory.close();
+    }
 }
